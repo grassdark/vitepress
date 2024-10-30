@@ -33,9 +33,17 @@ export default defineConfig({
         ]
       },
       {
-        text: 'markdown', 
+        text: 'markdown',
+        collapsed: true, 
         items: [
-          { text: 'use', link: 'markdown/use' }
+          { text: 'cheatsheet', link: 'markdown/cheatsheet' }
+        ]
+      },
+      {
+        text: 'git', 
+        collapsed: true,
+        items: [
+          { text: 'cheatsheet', link: 'git/cheatsheet' }
         ]
       }
     ],

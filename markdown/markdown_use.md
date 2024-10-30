@@ -1,0 +1,1 @@
+[表情符号简码列表](https://gist.github.com/rxaviers/7360908)

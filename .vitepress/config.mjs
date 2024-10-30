@@ -31,6 +31,12 @@ export default defineConfig({
               ]
           }
         ]
+      },
+      {
+        text: 'markdown', 
+        items: [
+          { text: 'use', link: 'markdown/use' }
+        ]
       }
     ],
 

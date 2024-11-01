@@ -8,12 +8,16 @@
 folder
     Doc
     Libraries
-        CMSIS                   //从软件包获取
+        CMSIS                   
+            Device              //从软件包获取
+            Include
         STM32H7xx_HAL_Driver    //从软件包获取
     Project
 
     User
         bsp
+            inc
+            src
         segger
         "main.c"
 ```
@@ -74,12 +78,13 @@ Define: USE_HAL_DRIVER, STM32H750xx
 0级别优化  
 :ballot_box_with_check:C99 Mode  
 Include Paths
-- \Libraries\CMSIS\Include
-- \Libraries\CMSIS\Device\ST\STM32H7xx\Include
-- \Libraries\STM32H7xx_HAL_Driver\Inc
-- \User\bsp\inc
-- \User
-- \User\bsp
+- ..\Libraries\CMSIS\Include
+- ..\Libraries\CMSIS\Device\ST\STM32H7xx\Include
+- ..\Libraries\STM32H7xx_HAL_Driver\Inc
+- ..\User\bsp\inc
+- ..\User\bsp
+- ..\User
+
 #### Asm
 #### Linker
 #### Debug

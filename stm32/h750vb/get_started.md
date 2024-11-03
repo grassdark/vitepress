@@ -1,24 +1,31 @@
 ### 下载地址
 [keil社区版](https://www.keil.arm.com/mdk-community/)  
+[DFP](https://www.keil.arm.com/packs/stm32h7xx_dfp-keil/overview/)  
 [stm32h7软件包](https://www.st.com/en/embedded-software/stm32cubeh7.html#get-software)  
+[CMSIS](https://github.com/ARM-software/CMSIS_6)  
 ![alt text](https://mdg.imgix.net/assets/images/san-juan-mountains.jpg?auto=format&fit=clip&q=40&w=1080)
 ### 文件添加
 ```c
 /* 文件夹结构 */
 folder
-    Doc
     Libraries
         CMSIS                   
-            Device              //从软件包获取
-            Include
-        STM32H7xx_HAL_Driver    //从软件包获取
+            Device              //软件包获取
+            Include             //CMSIS获取
+        STM32H7xx_HAL_Driver    //软件包获取
     Project
-
     User
         bsp
             inc
             src
+            "bsp.c"
+            "bsp.h"
+            "stm32h7xx_hal_conf.h"
+            "stm32h7xx_it.c"
+            "stm32h7xx_it.h"
         segger
+            "HardFaultHandler.S"
+            "SEGGER_HardFaultHandler.c"
         "main.c"
 ```
 keil添加Groups
@@ -30,7 +37,7 @@ BSP
     "bsp.h"
     "stm32h7xx_it.c"
 MDK-ARM
-    "startup_stm32.c"    //堆和栈空间设置 中断向量表
+    "startup_stm32h750xx.s"    //堆和栈空间设置 中断向量表
 HAL_Driver
     "stm32h7xx_hal_conf.h"
     "stm32h7xx_hal.c"
@@ -52,7 +59,6 @@ CMSIS
 SEGGER/HardFault
     "HardFaultHandler.S"
     "SEGGER_HardFaultHandler.c"
-Doc
 ```
 ### Options for Target
 #### Device
@@ -89,3 +95,13 @@ Include Paths
 #### Linker
 #### Debug
 #### Utilities
+### 文件
+#### startup_stm32h750xx.s
+堆栈设置
+#### .map
+keil中双击target查看/文件夹中搜索  
+查看全局变量在RAM中的位置  
+局部变量需在调试时查看  
+Memory Map of the image  
+    Load Region  程序在Flash中的实际存储  
+    Execution Region  芯片上电后的运行状态  

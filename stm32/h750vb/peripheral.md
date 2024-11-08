@@ -10,3 +10,8 @@ gpio_init_struct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
 
 HAL_GPIO_Init(GPIOA, &gpio_init_struct);
 ```
+用BSRR去改变管脚状态的时候，没有被中断打断的风险。
+
+### NVIC
+IRQ  中断请求（Interrupt Request）  
+ISR  中断服务程序（Interrupt Service Routine）  

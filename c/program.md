@@ -27,3 +27,8 @@
 #define UNUSED(x) ((void)(x))    /* To avoid gcc/g++ warnings */
 #endif /* UNUSED */
 ```
+```c
+#define	USER_CLEAR_BIT(x, bit)  (x  &= ~(1 << bit))	        /* 清零第bit位 */
+#define	USER_GET_BIT(x, bit)    ((x &   (1 << bit)) >> bit)	/* 获取第bit位 */
+#define	USER_SET_BIT(x, bit)    (x  |=  (1 << bit))	        /* 置位第bit位 */
+```

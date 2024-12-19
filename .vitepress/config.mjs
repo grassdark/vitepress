@@ -20,6 +20,12 @@ export default defineConfig({
         ]
       },
       {
+        text: 'efr32',
+        items: [
+          { text: 'common use code', link: 'efr32/common_use_code' }
+        ]
+      },
+      {
         text: 'stm32',
         collapsed: true,
         items: [

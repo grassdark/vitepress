@@ -77,6 +77,11 @@ void _putchar(char character)
 #define IADC_INPUT_0_BUSALLOC     GPIO_BBUSALLOC_BEVEN0_ADC0
 ```
 
+```c [variables]
+static volatile IADC_Result_t sample;
+static volatile double singleResult; // Volts
+```
+
 ```c [initHFXO]
 void initHFXO(void)
 {
@@ -104,6 +109,10 @@ void initHFXO(void)
   // Select HFXO as the EM01GRPA clock
   CMU_ClockSelectSet(cmuClock_EM01GRPACLK, cmuSelect_HFXO);
 }
+```
+
+```c [initCmu]
+CMU_ClockEnable(cmuClock_GPIO, true);
 ```
 
 ```c [initIADC]
